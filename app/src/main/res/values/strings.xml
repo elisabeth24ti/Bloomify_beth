@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Bloomify</string>
+    <string name="Detail">Bloomify — Aplikasi Konseling dan Kesehatan Mental adalah aplikasi mobile
+        yang membantu pengguna mengenali kondisi kesehatan mental melalui tes
+        mandiri berbentuk kuesioner. Hasil tes dapat menjadi langkah awal untuk mengetahui
+        kondisi yang sedang dialami dan apakah pengguna membutuhkan bantuan psikolog. Jika membutuhkan konsultasi,
+        pengguna dapat memilih psikolog sesuai kebutuhan melalui card yang menampilkan profil, spesialisasi,
+        dan riwayat pendidikan, kemudian chatting langsung dengan psikolog untuk
+        mendapatkan bantuan lebih lanjut</string>
+</resources>
