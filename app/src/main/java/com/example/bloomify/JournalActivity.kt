@@ -1,5 +1,6 @@
 package com.example.bloomify
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.bloomify.databinding.ActivityJournalBinding
+import com.example.bloomify.fragment.KonselingFragment
 
 class JournalActivity : AppCompatActivity() {
 
@@ -26,11 +28,13 @@ class JournalActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        binding.btntambahJournal.setOnClickListener {
+            startActivity(Intent(this, DetailActivity::class.java))
+        }
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Halaman Pertemuan 5"
-            subtitle = "Ini adalah subtitle"
+            title = "Journal"
+            subtitle = "Whats been on your mind this week?"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
@@ -42,6 +46,7 @@ class JournalActivity : AppCompatActivity() {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }
+
             R.id.action_search -> {
                 Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
                 true
@@ -56,9 +61,11 @@ class JournalActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
+
 }

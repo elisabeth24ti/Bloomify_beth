@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/indigo"
+    android:padding="16dp"
+    tools:context=".fragment.SatuFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Card 1: Anindya Putri -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/avatar1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/user" />
+
+                <!-- Nama Psikolog -->
+                <TextView
+                    android:id="@+id/tvName1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Anindya Putri, M.Psi."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/avatar1"
+                    app:layout_constraintTop_toTopOf="@id/avatar1" />
+
+                <!-- Spesialisasi & Pengalaman -->
+                <TextView
+                    android:id="@+id/tvSpec1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Psikolog klinis · 6 tahun"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tvName1"
+                    app:layout_constraintTop_toBottomOf="@id/tvName1" />
+
+                <!-- Topik -->
+                <TextView
+                    android:id="@+id/tvTopic1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Stres akademik, kecemasan"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tvName1"
+                    app:layout_constraintTop_toBottomOf="@id/tvSpec1" />
+
+                <!-- Rating -->
+                <TextView
+                    android:id="@+id/tvRating1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="⭐ 4.9 (120 ulasan)"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvName1"
+                    app:layout_constraintTop_toBottomOf="@id/tvTopic1" />
+
+                <!-- Harga -->
+
+                <!-- Deskripsi Harga -->
+
+                <!-- Tombol Buat Jadwal -->
+                <TextView
+                    android:id="@+id/tvPrice1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="76dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Rp60.000 "
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvRating1"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Button
+                    android:id="@+id/btnPilih1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#C4F22C"
+                    android:minWidth="80dp"
+                    android:minHeight="40dp"
+                    android:text="Buat Jadwal"
+                    android:textAllCaps="false"
+                    android:textColor="#F44336"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 2: Raka Mahendra -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/avatar2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/user" />
+
+                <!-- Nama Psikolog -->
+                <TextView
+                    android:id="@+id/tvName2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Raka Mahendra, M.Psi."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/avatar2"
+                    app:layout_constraintTop_toTopOf="@id/avatar2" />
+
+                <!-- Spesialisasi & Pengalaman -->
+                <TextView
+                    android:id="@+id/tvSpec2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Psikolog pendidikan · 4 tahun"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tvName2"
+                    app:layout_constraintTop_toBottomOf="@id/tvName2" />
+
+                <!-- Topik -->
+                <TextView
+                    android:id="@+id/tvTopic2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Manajemen waktu, motivasi belajar"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tvName2"
+                    app:layout_constraintTop_toBottomOf="@id/tvSpec2" />
+
+                <!-- Rating -->
+                <TextView
+                    android:id="@+id/tvRating2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="⭐ 4.8 (95 ulasan)"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvName2"
+                    app:layout_constraintTop_toBottomOf="@id/tvTopic2" />
+
+                <!-- Harga -->
+
+                <!-- Deskripsi Harga -->
+
+                <!-- Tombol Buat Jadwal -->
+                <TextView
+                    android:id="@+id/tvPrice2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="76dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Rp50.000 "
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvRating2"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <Button
+                    android:id="@+id/btnPilih2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#C4F22C"
+                    android:minWidth="80dp"
+                    android:minHeight="40dp"
+                    android:text="Buat Jadwal"
+                    android:textAllCaps="false"
+                    android:textColor="#F44336"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 3: Sinta Larasati -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/avatar3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/user" />
+
+                <!-- Nama Psikolog -->
+                <TextView
+                    android:id="@+id/tvName3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Sinta Larasati, M.Psi."
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/avatar3"
+                    app:layout_constraintTop_toTopOf="@id/avatar3" />
+
+                <!-- Spesialisasi & Pengalaman -->
+                <TextView
+                    android:id="@+id/tvSpec3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Psikolog klinis · 8 tahun"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tvName3"
+                    app:layout_constraintTop_toBottomOf="@id/tvName3" />
+
+                <!-- Topik -->
+                <TextView
+                    android:id="@+id/tvTopic3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Kelelahan, gangguan tidur"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tvName3"
+                    app:layout_constraintTop_toBottomOf="@id/tvSpec3" />
+
+                <!-- Rating -->
+                <TextView
+                    android:id="@+id/tvRating3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="⭐ 4.9 (210 ulasan)"
+                    android:textColor="#757575"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvName3"
+                    app:layout_constraintTop_toBottomOf="@id/tvTopic3" />
+
+                <!-- Harga -->
+
+                <!-- Deskripsi Harga -->
+
+                <!-- Tombol Buat Jadwal -->
+                <TextView
+                    android:id="@+id/tvPrice3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="76dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Rp75.000 "
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvRating3"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Button
+                    android:id="@+id/btnPilih3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#C4F22C"
+                    android:minWidth="80dp"
+                    android:minHeight="40dp"
+                    android:text="Buat Jadwal"
+                    android:textAllCaps="false"
+                    android:textColor="#F44336"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
