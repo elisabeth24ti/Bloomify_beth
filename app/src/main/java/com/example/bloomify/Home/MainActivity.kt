@@ -1,17 +1,17 @@
-package com.example.bloomify
+package com.example.bloomify.Home
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.bloomify.Counseling.Chat.KonselingFragment
+import com.example.bloomify.Journal.JournalActivity
+import com.example.bloomify.LoginActivity
+import com.example.bloomify.R
 import com.example.bloomify.databinding.ActivityMainBinding
-import com.example.bloomify.fragment.KonselingFragment
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

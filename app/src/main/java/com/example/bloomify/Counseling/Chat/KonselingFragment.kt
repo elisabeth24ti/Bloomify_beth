@@ -1,4 +1,4 @@
-package com.example.bloomify.fragment
+package com.example.bloomify.Counseling.Chat
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -34,10 +34,10 @@ class KonselingFragment : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 // Menampilkan fragment pertama secara default
-        replaceFragment(SatuFragment())
+        replaceFragment(ChatFragment())
 // Setup event click untuk mengganti fragment
-        binding.btnFragment1.setOnClickListener { replaceFragment(SatuFragment()) }
-        binding.btnFragment2.setOnClickListener { replaceFragment(DuaFragment()) }
+        binding.btnFragment1.setOnClickListener { replaceFragment(ChatFragment()) }
+        binding.btnFragment2.setOnClickListener { replaceFragment(BertemuLangsungFragment()) }
     }
     private fun replaceFragment(fragment: Fragment, addToBackStack: Boolean = true) {
         val transaction = supportFragmentManager.beginTransaction()

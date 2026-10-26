@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/focus"
+        android:icon="@drawable/ic_focus"
+        android:title="Focus" />
+    <item
+        android:id="@+id/mood"
+        android:icon="@drawable/ic_mood"
+        android:title="Mood" />
+    <item
+        android:id="@+id/journal"
+        android:icon="@drawable/ic_journal"
+        android:title="Journal" />
+    <item
+        android:id="@+id/counseling"
+        android:icon="@drawable/ic_counseling"
+        android:title="Counseling" />
+</menu>

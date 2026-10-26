@@ -1,4 +1,4 @@
-package com.example.bloomify
+package com.example.bloomify.Home
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.bloomify.R
 import com.example.bloomify.databinding.ActivityWebViewBinding
 
 class WebViewActivity : AppCompatActivity() {

@@ -24,19 +24,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Journal.DetailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".Journal.JournalActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".JournalActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".WebViewActivity"
+            android:name=".Home.WebViewActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -44,11 +40,19 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".fragment.SixthActivity"
+            android:name=".Counseling.Chat.KonselingFragment"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".fragment.KonselingFragment"
+            android:name=".BaseActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Counseling.Chat.ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Counseling.Chat.BertemuLangsungActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

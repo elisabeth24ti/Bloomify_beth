@@ -2,15 +2,13 @@ package com.example.bloomify
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.bloomify.Home.MainActivity
 import com.example.bloomify.databinding.ActivityLoginBinding
-import kotlin.toString
 
 
 class LoginActivity : AppCompatActivity() {
@@ -41,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", user)
                 editor.apply()
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, BaseActivity::class.java)
                 intent.putExtra("username", user)
                 startActivity(intent)
                 finish()
