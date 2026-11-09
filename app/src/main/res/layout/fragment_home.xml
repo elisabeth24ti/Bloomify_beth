@@ -5,8 +5,18 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green"
+    android:background="@color/indigo"
     tools:context=".Home.MainActivity">
+
+    <View
+        android:id="@+id/background_header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/green"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -45,28 +55,110 @@
 
     <ImageButton
         android:id="@+id/btnlogout"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="36dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="#FB5AB0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:srcCompat="@android:drawable/ic_menu_revert" />
 
+
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:clipToPadding="false"
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnlogout">
+        app:layout_constraintTop_toBottomOf="@+id/btnlogout"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtChooseMood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="Let's Track How You Feel!"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                app:columnCount="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtChooseMood">
+
+                <Button
+                    android:id="@+id/btnsangatBuruk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Sangat Buruk"
+                    android:textColor="@color/orange"
+                    android:textSize="10sp"
+                    app:layout_columnWeight="1" />
+
+                <Button
+                    android:id="@+id/btnBuruk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Buruk"
+                    android:textColor="@color/orange"
+                    android:textSize="10sp"
+                    app:layout_columnWeight="1" />
+
+                <Button
+                    android:id="@+id/btnBiasaAja"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Biasa Aja"
+                    android:textColor="@color/orange"
+                    android:textSize="10sp"
+                    app:layout_columnWeight="1" />
+
+                <Button
+                    android:id="@+id/btnBaik"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Baik"
+                    android:textColor="@color/orange"
+                    android:textSize="10sp"
+                    app:layout_columnWeight="1" />
+
+                <Button
+                    android:id="@+id/btnBaikSekali"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:backgroundTint="@color/white"
+                    android:text="Baik Sekali"
+                    android:textColor="@color/orange"
+                    android:textSize="10sp"
+                    app:layout_columnWeight="1" />
+
+            </androidx.gridlayout.widget.GridLayout>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView1"
@@ -111,10 +203,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/orange"
-                        android:text="Website"
-                        android:textStyle="bold"
                         android:fontFamily="@font/fredoka"
+                        android:text="Website"
                         android:textColor="@color/white"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
@@ -165,10 +257,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/orange"
-                        android:text="Buat Journal"
-                        android:textStyle="bold"
                         android:fontFamily="@font/fredoka"
+                        android:text="Buat Journal"
                         android:textColor="@color/white"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
@@ -219,10 +311,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/orange"
-                        android:text="Pilih Psikolog"
-                        android:textStyle="bold"
                         android:fontFamily="@font/fredoka"
+                        android:text="Pilih Psikolog"
                         android:textColor="@color/white"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView7" />

@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".Counseling.CounselingFragment"
     android:background="@color/indigo">
+
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"

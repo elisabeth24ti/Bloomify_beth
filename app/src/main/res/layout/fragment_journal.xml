@@ -19,7 +19,22 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/green"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:titleTextColor="@color/orange" />
+            app:titleTextColor="@color/orange">
+
+        <Button
+            android:id="@+id/btntambahJournal"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/orange"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="0dp"
+            ></Button>
+        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,27 +42,47 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <Button
-            android:id="@+id/btntambahJournal"
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/orange"
-            android:text="+"
-            android:textSize="30dp"
-            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-        </Button>
+            app:singleSelection="true">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSenang"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Senang"
+                android:textColor="@color/orange"
+                app:chipBackgroundColor="@color/white"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSedih"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sedih"
+                android:textColor="@color/orange"
+                app:chipBackgroundColor="@color/white"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMarah"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marah"
+                android:textColor="@color/orange"
+                app:chipBackgroundColor="@color/white"/>
+        </com.google.android.material.chip.ChipGroup>
 
         <ListView
             android:id="@+id/listViewItems"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/btntambahJournal"
+            app:layout_constraintTop_toBottomOf="@id/chipGroupFilter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>

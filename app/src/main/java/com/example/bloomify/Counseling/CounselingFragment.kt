@@ -1,13 +1,18 @@
 package com.example.bloomify.Counseling
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.example.bloomify.Counseling.Chat.BertemuLangsungFragment
 import com.example.bloomify.Counseling.Chat.ChatFragment
+import com.example.bloomify.R
 import com.example.bloomify.databinding.FragmentCounselingBinding
 
 class CounselingFragment : Fragment() {
@@ -22,11 +27,15 @@ class CounselingFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.toolbar.title = "Konseling"
-        binding.toolbar.subtitle = "Pilih psikolog anda"
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            binding.toolbar.title = "Konseling"
+            binding.toolbar.subtitle = "Pilih psikolog anda"
+        }
+        setHasOptionsMenu(true)
 
         replaceFragment(ChatFragment())
 
@@ -38,24 +47,32 @@ class CounselingFragment : Fragment() {
             replaceFragment(BertemuLangsungFragment())
         }
     }
-
     private fun replaceFragment(fragment: Fragment) {
         childFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
             .commit()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.counseling_toolbar_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_tutorial -> {
+                val intent = Intent(requireContext(), TutorialCounselingActivity::class.java)
+                startActivity(intent)
+                true
+            }
             android.R.id.home -> {
                 requireActivity().onBackPressedDispatcher.onBackPressed()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 }
 
 
