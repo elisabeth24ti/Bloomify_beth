@@ -34,6 +34,7 @@
             android:textStyle="bold"
             android:padding="0dp"
             ></Button>
+
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -78,10 +79,12 @@
                 app:chipBackgroundColor="@color/white"/>
         </com.google.android.material.chip.ChipGroup>
 
-        <ListView
-            android:id="@+id/listViewItems"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvJournal"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:padding="12dp"
+            android:clipToPadding="false"
             app:layout_constraintTop_toBottomOf="@id/chipGroupFilter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
