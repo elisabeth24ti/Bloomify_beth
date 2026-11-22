@@ -10,6 +10,7 @@ import com.example.bloomify.Counseling.CounselingFragment
 import com.example.bloomify.Focus.FocusFragment
 import com.example.bloomify.Home.HomeFragment
 import com.example.bloomify.Journal.JournalFragment
+import com.example.bloomify.Konseling.KonselingFragment
 import com.example.bloomify.Mood.MoodFragment
 import com.example.bloomify.databinding.ActivityBaseBinding
 
@@ -48,7 +49,7 @@ class BaseActivity : AppCompatActivity() {
                     true
                 }
                 R.id.counseling -> {
-                    replaceFragment(CounselingFragment())
+                    replaceFragment(KonselingFragment())
                     true
                 }
                 else -> false // false jika item tidak dikenal

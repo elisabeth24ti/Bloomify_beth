@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.bloomify.R
 import com.example.bloomify.databinding.ActivityKonselingFragmentBinding
 
-class KonselingFragment : AppCompatActivity() {
+class Konseling1Fragment : AppCompatActivity() {
     private lateinit var binding: ActivityKonselingFragmentBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

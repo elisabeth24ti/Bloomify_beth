@@ -1,4 +1,4 @@
-package com.example.bloomify.Counseling
+package com.example.bloomify.Konseling
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

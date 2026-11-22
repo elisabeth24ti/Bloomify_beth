@@ -8,10 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import com.example.bloomify.Counseling.Chat.KonselingFragment
 import com.example.bloomify.Counseling.CounselingFragment
 import com.example.bloomify.Journal.DetailActivity
-import com.example.bloomify.Journal.JournalActivity
 import com.example.bloomify.LoginActivity
 import com.example.bloomify.R
 import com.example.bloomify.databinding.FragmentHomeBinding

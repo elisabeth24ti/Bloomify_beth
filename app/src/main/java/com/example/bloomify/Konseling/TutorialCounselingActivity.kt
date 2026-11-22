@@ -1,4 +1,4 @@
-package com.example.bloomify.Counseling
+package com.example.bloomify.Konseling
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

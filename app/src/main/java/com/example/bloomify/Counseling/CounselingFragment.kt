@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bloomify.Counseling.Chat.BertemuLangsungFragment
 import com.example.bloomify.Counseling.Chat.ChatFragment
+import com.example.bloomify.Konseling.TutorialCounselingActivity
 import com.example.bloomify.R
 import com.example.bloomify.databinding.FragmentCounselingBinding
 

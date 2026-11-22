@@ -7,7 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.bloomify.Counseling.Chat.KonselingFragment
+import com.example.bloomify.Counseling.Chat.Konseling1Fragment
 import com.example.bloomify.Journal.JournalActivity
 import com.example.bloomify.LoginActivity
 import com.example.bloomify.R
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, WebViewActivity::class.java))
         }
         binding.btnKonseling.setOnClickListener {
-            startActivity(Intent(this, KonselingFragment::class.java))
+            startActivity(Intent(this, Konseling1Fragment::class.java))
         }
 
         binding.btnlogout.setOnClickListener {
