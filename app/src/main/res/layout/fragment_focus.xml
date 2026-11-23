@@ -7,6 +7,16 @@
     android:background="@color/green"
     tools:context=".Focus.FocusFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/indigo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white" />
+
     <TextView
         android:id="@+id/txtTimer"
         android:layout_width="wrap_content"

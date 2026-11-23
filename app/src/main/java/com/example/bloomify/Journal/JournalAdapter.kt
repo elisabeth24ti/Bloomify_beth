@@ -6,13 +6,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bloomify.databinding.ItemJournalBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import data.entity.JournalEntity
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class JournalAdapter(
     private val journals: List<JournalEntity>,
     private val onDelete: (JournalEntity) -> Unit
 ) : RecyclerView.Adapter<JournalAdapter.JournalViewHolder>() {
+
+    private val dateFormat = SimpleDateFormat("EEEE, d MMM yyyy", Locale("id", "ID"))
+
     class JournalViewHolder(val binding: ItemJournalBinding) :
         RecyclerView.ViewHolder(binding.root)
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -22,12 +29,15 @@ class JournalAdapter(
         )
         return JournalViewHolder(binding)
     }
+
     override fun onBindViewHolder(
         holder: JournalViewHolder,
         position: Int
     ) {
         val journal = journals[position]
         holder.binding.tvTitle.text = journal.title
+        holder.binding.tvTanggal.text = dateFormat.format(Date(journal.createdAt))
+        holder.binding.tvMood.text = "Mood: ${journal.mood}"
         holder.binding.tvContent.text = journal.content
         holder.binding.btnDelete.setOnClickListener {
             MaterialAlertDialogBuilder(holder.itemView.context)
@@ -38,5 +48,6 @@ class JournalAdapter(
                 .show()
         }
     }
+
     override fun getItemCount(): Int = journals.size
 }

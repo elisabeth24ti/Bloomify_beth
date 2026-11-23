@@ -5,15 +5,42 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.example.bloomify.R
+import com.example.bloomify.databinding.FragmentFocusBinding
 
 
 class FocusFragment : Fragment() {
+    private var _binding: FragmentFocusBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_focus, container, false)
+        _binding = FragmentFocusBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Toolbar + tombol back (sama seperti di Konseling)
+        val activity = requireActivity() as AppCompatActivity
+        activity.setSupportActionBar(binding.toolbar)
+        activity.supportActionBar?.apply {
+            title = "Focus"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+        }
+        binding.toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+    }
+
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
     }
 }

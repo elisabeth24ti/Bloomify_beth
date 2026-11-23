@@ -39,30 +39,17 @@
             android:name=".LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-<!--        <activity-->
-<!--            android:name=".Counseling.Chat.Konseling1Fragment"-->
-<!--            android:exported="false"-->
-<!--            android:windowSoftInputMode="adjustResize" />-->
+
         <activity
             android:name=".BaseActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-<!--        <activity-->
-<!--            android:name=".Counseling.Chat.ChatActivity"-->
-<!--            android:exported="false"-->
-<!--            android:windowSoftInputMode="adjustResize" />-->
-<!--        <activity-->
-<!--            android:name=".Counseling.Chat.BertemuLangsungActivity"-->
-<!--            android:exported="false"-->
-<!--            android:windowSoftInputMode="adjustResize" />-->
+
         <activity
-            android:name=".Konseling.TutorialCounselingActivity"
+            android:name=".Konseling.OnboardingCounselingActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-<!--        <activity-->
-<!--            android:name=".Konseling.KonselingActivity"-->
-<!--            android:exported="false"-->
-<!--            android:windowSoftInputMode="adjustResize" />-->
+
     </application>
 
 </manifest>

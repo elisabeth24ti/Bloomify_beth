@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/indigo"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Konseling.Tutorial2Fragment">
+    tools:context=".Konseling.Onboarding2Fragment">
 
     <ImageView
         android:id="@+id/imageView3"

@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class TutorialFragmentAdapter(
+class OnboardingFragmentAdapter(
     activity: FragmentActivity,
     private val fragments: List<Fragment>
 ) : FragmentStateAdapter(activity) {

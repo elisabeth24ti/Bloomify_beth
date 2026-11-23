@@ -19,7 +19,8 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/green"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:titleTextColor="@color/orange">
+            app:titleTextColor="@color/orange"
+            app:subtitleTextColor="@color/orange">
 
         <Button
             android:id="@+id/btntambahJournal"
@@ -48,35 +49,40 @@
             android:id="@+id/chipGroupFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:chipSpacingHorizontal="4dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.076"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:singleSelection="true">
+
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipSenang"
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
                 android:text="Senang"
-                android:textColor="@color/orange"
-                app:chipBackgroundColor="@color/white"/>
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/orange" />
+
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipSedih"
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sedih"
-                android:textColor="@color/orange"
-                app:chipBackgroundColor="@color/white"/>
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/orange" />
+
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipMarah"
                 style="@style/Widget.MaterialComponents.Chip.Filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Marah"
-                android:textColor="@color/orange"
-                app:chipBackgroundColor="@color/white"/>
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/orange"/>
         </com.google.android.material.chip.ChipGroup>
 
         <androidx.recyclerview.widget.RecyclerView

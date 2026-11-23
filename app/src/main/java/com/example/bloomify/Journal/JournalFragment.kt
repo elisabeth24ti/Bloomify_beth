@@ -6,18 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SimpleAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bloomify.R
 import com.example.bloomify.databinding.FragmentJournalBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.example.bloomify.databinding.DialogJournalFormBinding
 import data.AppDatabase
 import data.entity.JournalEntity
 import kotlinx.coroutines.launch
+import com.google.android.material.chip.Chip
 
 class JournalFragment : Fragment() {
     private var _binding: FragmentJournalBinding? = null
@@ -25,6 +26,7 @@ class JournalFragment : Fragment() {
     private lateinit var db: AppDatabase
     private lateinit var adapter: JournalAdapter
     private val journals = mutableListOf<JournalEntity>()
+    private var selectedMood: String? = null   // null = tampilkan semua
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,6 +55,29 @@ class JournalFragment : Fragment() {
             showFormDialog()
         }
 
+        val activity = requireActivity() as AppCompatActivity
+        activity.setSupportActionBar(binding.toolbar)
+        activity.supportActionBar?.apply {
+            title = "Journal"
+            subtitle ="Ceritakan harimu di sini"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+        }
+
+        binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
+            val selectedChipId = checkedIds.firstOrNull() // ambil id chip yang dipilih
+            selectedMood = if (selectedChipId != null) {
+                group.findViewById<Chip>(selectedChipId).text.toString()
+            } else {
+                null // tidak ada chip dipilih -> tampilkan semua
+            }
+            fetchJournals()
+            if (savedInstanceState == null && arguments?.getBoolean("open_form") == true) {
+                showFormDialog()
+            }
+        }
+
         fetchJournals()
     }
 
@@ -64,27 +89,29 @@ class JournalFragment : Fragment() {
             .setNegativeButton("Batal", null)
             .setPositiveButton("Simpan", null)
             .show()
-        // dipasang setelah show() supaya dialog tidak menutup kalau input belum diisi
         dialog.getButton(android.content.DialogInterface.BUTTON_POSITIVE)
             .setOnClickListener {
                 val title = dialogBinding.etTitle.text.toString().trim()
                 val content = dialogBinding.etContent.text.toString().trim()
+                val chip = dialogBinding.chipGroupMood
+                    .findViewById<Chip>(dialogBinding.chipGroupMood.checkedChipId)
+                val mood = chip.text.toString()
                 if (title.isBlank() || content.isBlank()) {
                     Toast.makeText(
                         requireContext(), "Isi semua kolom!", Toast.LENGTH_SHORT
                     ).show()
                     return@setOnClickListener
                 }
-                insertJournal(title, content)
+                insertJournal(title, content, mood)
                 dialog.dismiss()
             }
     }
 
-    private fun insertJournal(title: String, content: String) {
+    private fun insertJournal(title: String, content: String, mood: String) {
         viewLifecycleOwner.lifecycleScope.launch {
             try {
                 db.journalDao().insert(
-                    JournalEntity(title = title, content = content)
+                    JournalEntity(title = title, content = content, mood = mood)
                 )
                 fetchJournals()
             } catch (e: Exception) {
@@ -97,7 +124,12 @@ class JournalFragment : Fragment() {
 
     private fun fetchJournals() {
         viewLifecycleOwner.lifecycleScope.launch {
-            val result = db.journalDao().getAll()
+            val mood = selectedMood
+            val result = if (mood == null) {
+                db.journalDao().getAll()
+            } else {
+                db.journalDao().getByMood(mood)
+            }
             journals.clear()
             journals.addAll(result)
             adapter.notifyDataSetChanged()

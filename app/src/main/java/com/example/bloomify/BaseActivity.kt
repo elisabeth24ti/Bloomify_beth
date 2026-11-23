@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.example.bloomify.Counseling.CounselingFragment
 import com.example.bloomify.Focus.FocusFragment
 import com.example.bloomify.Home.HomeFragment
 import com.example.bloomify.Journal.JournalFragment

@@ -8,8 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import com.example.bloomify.Counseling.CounselingFragment
+import com.example.bloomify.Konseling.KonselingFragment
 import com.example.bloomify.Journal.DetailActivity
+import com.example.bloomify.Journal.JournalFragment
 import com.example.bloomify.LoginActivity
 import com.example.bloomify.R
 import com.example.bloomify.databinding.FragmentHomeBinding
@@ -32,16 +33,28 @@ class HomeFragment : Fragment() {
 
         binding.txtUsername.text = user
 
-        binding.btnJournal.setOnClickListener {
-            startActivity(Intent(requireContext(), DetailActivity::class.java))
-        }
-
-        binding.btnWebView.setOnClickListener {
+        binding.materialCardView1.setOnClickListener {
             startActivity(Intent(requireContext(), WebViewActivity::class.java))
         }
-        binding.btnKonseling.setOnClickListener {
+
+        binding.materialCardView2.setOnClickListener {
+            val fragment = JournalFragment()
+            fragment.arguments = Bundle().apply {
+                putBoolean("open_form", true)
+            }
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, CounselingFragment())
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        binding.materialCardView3.setOnClickListener {
+            val fragment = KonselingFragment()
+            fragment.arguments = Bundle().apply {
+                putBoolean("open_form", true)
+            }
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
                 .addToBackStack(null)
                 .commit()
         }

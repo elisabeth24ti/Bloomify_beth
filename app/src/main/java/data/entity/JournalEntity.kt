@@ -9,5 +9,6 @@ class JournalEntity(
     val id: Int = 0,
     val title: String,
     val content: String,
+    val mood: String,
     val createdAt: Long = System.currentTimeMillis()
 )

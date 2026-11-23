@@ -88,7 +88,7 @@ class KonselingFragment : Fragment() {
                 true
             }
             R.id.action_tutorial -> {
-                val intent = Intent(requireContext(), TutorialCounselingActivity::class.java)
+                val intent = Intent(requireContext(), OnboardingCounselingActivity::class.java)
                 startActivity(intent)
                 true
             }

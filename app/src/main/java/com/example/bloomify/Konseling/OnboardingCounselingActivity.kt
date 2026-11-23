@@ -6,15 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.bloomify.R
-import com.example.bloomify.databinding.ActivityTutorialCounselingBinding
+import com.example.bloomify.databinding.ActivityOnboardingCounselingBinding
 
-class TutorialCounselingActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityTutorialCounselingBinding
+class OnboardingCounselingActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityOnboardingCounselingBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding= ActivityTutorialCounselingBinding.inflate(layoutInflater)
+        binding= ActivityOnboardingCounselingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -22,11 +22,11 @@ class TutorialCounselingActivity : AppCompatActivity() {
             insets
         }
         val fragmentsList = listOf(
-            Tutorial1Fragment(),
-            Tutorial2Fragment(),
-            Tutorial3Fragment()
+            Onboarding1Fragment(),
+            Onboarding2Fragment(),
+            Onboarding3Fragment()
         )
-        val adapter = TutorialFragmentAdapter(this, fragmentsList)
+        val adapter = OnboardingFragmentAdapter(this, fragmentsList)
         binding.tutorialCounselingViewPager.adapter = adapter
 
         binding.tutorialCounselingViewPager.adapter = adapter

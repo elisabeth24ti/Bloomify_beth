@@ -10,6 +10,10 @@ import data.entity.JournalEntity
 interface JournalDao {
     @Query("SELECT * FROM journals ORDER BY createdAt DESC")
     suspend fun getAll(): List<JournalEntity>
+
+    @Query("SELECT * FROM journals WHERE mood = :mood ORDER BY createdAt DESC")
+    suspend fun getByMood(mood: String): List<JournalEntity>
+
     @Insert
     suspend fun insert(journal: JournalEntity)
     @Delete
