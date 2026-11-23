@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bloomify.R
 import com.example.bloomify.databinding.FragmentFocusBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class FocusFragment : Fragment() {
@@ -35,7 +36,9 @@ class FocusFragment : Fragment() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
         binding.toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
+            requireActivity()
+                .findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+                .selectedItemId = R.id.home
         }
     }
 

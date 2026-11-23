@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.bloomify.R
 import com.example.bloomify.databinding.FragmentKonselingBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayoutMediator
 
 class KonselingFragment : Fragment() {
@@ -41,14 +42,19 @@ class KonselingFragment : Fragment() {
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
+        binding.toolbar.setNavigationOnClickListener {
+            requireActivity()
+                .findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+                .selectedItemId = R.id.home
+        }
 
         //  Supaya Fragment mau menampilkan menu di Toolbar
         setHasOptionsMenu(true)
 
-        // 2. Tombol Back Toolbar
-        binding.toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
-        }
+//        // 2. Tombol Back Toolbar
+//        binding.toolbar.setNavigationOnClickListener {
+//            requireActivity().onBackPressedDispatcher.onBackPressed()
+//        }
 
         // 3. Inisialisasi adapter ViewPager2
         val tabsAdapter = KonselingAdapter(this)

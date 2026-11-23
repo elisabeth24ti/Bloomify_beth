@@ -15,6 +15,7 @@ import com.example.bloomify.R
 import com.example.bloomify.databinding.FragmentJournalBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.example.bloomify.databinding.DialogJournalFormBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import data.AppDatabase
 import data.entity.JournalEntity
 import kotlinx.coroutines.launch
@@ -63,6 +64,11 @@ class JournalFragment : Fragment() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+        }
+        binding.toolbar.setNavigationOnClickListener {
+            requireActivity()
+                .findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+                .selectedItemId = R.id.home
         }
 
         binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
